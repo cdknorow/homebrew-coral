@@ -1,25 +1,31 @@
 cask "coral" do
-  version "2.2.1"
-  sha256 ""  # TODO: fill after DMG is published
+  version "1.4.39"
+  sha256 "8bdc6036da9df34b863458d1db3b9f50fa7c5477e9ec2098dd8b245c6372c7fc"
 
-  url "https://github.com/cdknorow/coral/releases/download/v#{version}/Coral.dmg"
+  url "https://github.com/cdknorow/coral/releases/download/v#{version}/Coral.v#{version}.dmg"
   name "Coral"
   desc "Multi-agent orchestration system for AI coding agents"
   homepage "https://github.com/cdknorow/coral"
 
-  depends_on formula: "tmux"
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
+  depends_on macos: :ventura
 
   app "Coral.app"
 
-  zap trash: [
-    "~/.coral",
-  ]
+  zap trash: "~/.coral"
 
   caveats <<~EOS
-    Coral requires tmux for agent management.
-    tmux has been installed as a dependency.
+    Coral bundles its own tmux; nothing else needs to be installed.
 
     Launch Coral from your Applications folder or Spotlight.
     The dashboard runs at http://localhost:8420.
+
+    The `coral`, `coral-board` and `coral-agent` command-line tools are not on
+    your PATH by default. To add them:
+      #{appdir}/Coral.app/Contents/MacOS/install-cli.sh
   EOS
 end
