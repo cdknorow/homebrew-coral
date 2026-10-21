@@ -2,10 +2,10 @@ cask "coral" do
   version "1.4.142"
   sha256 "4ad5ed10de3b115702e3b3e259eaab9cac1e9da40be3b5201386b047f9c92859"
 
-  url "https://github.com/cdknorow/coral/releases/download/v#{version}/Coral.v#{version}.dmg"
+  url "https://github.com/subgentic/coral/releases/download/v#{version}/Coral.v#{version}.dmg"
   name "Coral"
   desc "Multi-agent orchestration system for AI coding agents"
-  homepage "https://github.com/cdknorow/coral"
+  homepage "https://github.com/subgentic/coral"
 
   livecheck do
     url :url
