@@ -1,6 +1,6 @@
 cask "coral" do
-  version "2.0.64"
-  sha256 "ce1cb4b1bca6178b3988da39d6052c765d44d4337c1ab06836b468bf89f402ac"
+  version "2.0.66"
+  sha256 "22ab293a984119c0960dc604c19ee0e98940eb7ff97fb96a9f459e2c414e5e53"
 
   url "https://github.com/subgentic/coral/releases/download/v#{version}/Coral.v#{version}.dmg"
   name "Coral"
